@@ -1,0 +1,191 @@
+css选择器
+
+1*
+
+含义：通配符
+
+例子：
+
+*
+{
+  margin:0;
+  padding:0;
+}
+
+Δ 给页面中所有元素设置样式
+
+例子：
+
+#container *
+{
+  border:1px solid black;
+}
+
+ 给id为container元素的所有子元素设置样式
+
+劣势：在页面中过度星状选择符，相当耗浏览器资源，影响网页渲染的时间，因此很多人停止使用*选择器，而是把所有需要统一设置的元素，放在一起一块设置。html,body,div,h1,h2,p,a,span{margin:0;padding:0;}
+
+兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
+
+2#
+
+含义：#作用于相应id的元素
+
+例子：
+
+#container
+{
+  width:300px;
+  background:#dfdfe5;
+  margin:0 auto;
+}
+
+Δ 给id为container元素设置样式
+
+兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
+
+3.
+
+含义：#作用于相应class的元素
+
+例子：
+
+.success
+{
+  color:#ff6600;
+}
+
+如下图：
+
+
+
+Δ 给class为success元素设置样式
+
+兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
+
+4A B
+
+含义：即后代选择器,用于选取A元素下所有子元素B
+
+例子：
+
+li a
+{
+  color:#ff6600;
+}
+
+如下图：
+
+
+
+Δ 给li下的所有a元素设置样式
+
+兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
+
+5A
+
+含义：即标签选择器,作用于范围内的所有对应标签
+
+例子：
+
+li
+{
+  line-height:36px;
+  background:#dfdfe5;
+  margin:10px;
+}
+
+如下图：
+
+
+
+Δ 给所有li元素设置样式
+
+兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
+
+6A:link、A:visited、A:hover、A:active
+
+含义：伪类选择器，A:link：未点击过的链接标签；A:visited：已访问的链接；A:hover：当有鼠标悬停在链接上；A:active：被选择的链接；
+
+定义顺序：A:link-->A:visited-->A:hover-->A:active（LoVe/HAte）
+
+例子：
+
+a:link
+{
+  color:green;
+}
+a:visited
+{
+  color:#ff6600;
+}
+
+如下图：
+
+
+
+
+
+Δ :link伪类作用于未点击过的链接标签。:hover伪类作用于点击过的链接
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+7A+B
+
+含义：相邻选择器
+
+例子：
+
+ul + p
+{
+  color:#ff6600;
+}
+
+如下图：
+
+
+
+Δ 给ul后面的第一个p设置样式
+
+li + li {color:#ff6600;}
+
+如下图：
+
+
+
+Δ 表示这个选择器只会把列表中的第二个字体颜色及后面的变为橙色。第一个列表项不受影响。
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+8A>B
+
+含义：子选择器,对A下的最近一级子级B起作用
+
+例子：
+
+#container > ul
+{
+  color:#ff6600;
+}
+
+如下图：
+
+
+
+Δ 给id为containerul后面的最近一级ul设置样式
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+9A~B
+
+含义：相邻选择器,与A相同级别的所有B元素
+
+例子：
+
+ul ~ p
+{
+  color:#ff6600;
+}
+
+如下图：
+
