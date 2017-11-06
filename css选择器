@@ -1,6 +1,6 @@
 css选择器
 
-1*
+1、*
 
 含义：通配符
 
@@ -27,83 +27,7 @@ css选择器
 
 兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
 
-2#
-
-含义：#作用于相应id的元素
-
-例子：
-
-#container
-{
-  width:300px;
-  background:#dfdfe5;
-  margin:0 auto;
-}
-
-Δ 给id为container元素设置样式
-
-兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
-
-3.
-
-含义：#作用于相应class的元素
-
-例子：
-
-.success
-{
-  color:#ff6600;
-}
-
-如下图：
-
-
-
-Δ 给class为success元素设置样式
-
-兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
-
-4A B
-
-含义：即后代选择器,用于选取A元素下所有子元素B
-
-例子：
-
-li a
-{
-  color:#ff6600;
-}
-
-如下图：
-
-
-
-Δ 给li下的所有a元素设置样式
-
-兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
-
-5A
-
-含义：即标签选择器,作用于范围内的所有对应标签
-
-例子：
-
-li
-{
-  line-height:36px;
-  background:#dfdfe5;
-  margin:10px;
-}
-
-如下图：
-
-
-
-Δ 给所有li元素设置样式
-
-兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
-
-6A:link、A:visited、A:hover、A:active
+2、A:link、A:visited、A:hover、A:active
 
 含义：伪类选择器，A:link：未点击过的链接标签；A:visited：已访问的链接；A:hover：当有鼠标悬停在链接上；A:active：被选择的链接；
 
@@ -120,17 +44,11 @@ a:visited
   color:#ff6600;
 }
 
-如下图：
-
-
-
-
-
 Δ :link伪类作用于未点击过的链接标签。:hover伪类作用于点击过的链接
 
 兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
 
-7A+B
+3、A+B
 
 含义：相邻选择器
 
@@ -140,24 +58,15 @@ ul + p
 {
   color:#ff6600;
 }
-
-如下图：
-
-
-
 Δ 给ul后面的第一个p设置样式
 
 li + li {color:#ff6600;}
-
-如下图：
-
-
 
 Δ 表示这个选择器只会把列表中的第二个字体颜色及后面的变为橙色。第一个列表项不受影响。
 
 兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
 
-8A>B
+4、A>B
 
 含义：子选择器,对A下的最近一级子级B起作用
 
@@ -168,15 +77,11 @@ li + li {color:#ff6600;}
   color:#ff6600;
 }
 
-如下图：
-
-
-
 Δ 给id为containerul后面的最近一级ul设置样式
 
 兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
 
-9A~B
+5、A~B
 
 含义：相邻选择器,与A相同级别的所有B元素
 
@@ -186,6 +91,365 @@ ul ~ p
 {
   color:#ff6600;
 }
+6、A[attribute]
+
+含义：属性选择器：value的值等于所有字符
+
+例子：
+
+a[title]
+{
+  color:green;
+}
+eg:<a href='http://www.baidu.com" title="前端宅女">前端宅女</a>
+
+Δ 给带有title属性的a链接元素设置样式
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+A[attribute='value']
+
+含义：属性选择器
+
+例子：
+
+a[href='http://www.timemgt.com.cn/qdzn/view']
+{
+  color:#ff6600;}
+
+
+Δ 给所有拥有href属性，且href为http://www.timemgt.com.cn/qdzn/view的所有链接，设置样式
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+7、[attribute*=value]
+
+含义：属性选择器：value的值等于包含字符
+
+例子：
+
+a[href*='qdzn/view']
+{
+  color:#ffaa00;
+}
 
 如下图：
+
+
+
+Δ 给href中包含'qdzn/view'的所有链接设置样式
+
+如果匹配所有图片的链接正常办法是如下
+
+a[href*='.jpg'],
+a[href*='.png'],
+a[href*='.gif']
+{
+  color:#ff6600;
+}
+
+如下图：
+
+但是，我们可以为所有的图片链接加一个特定的属性，例如‘data-filetype’
+
+图片链接 
+
+a[data-filetype='image']
+{
+  background:#ff6600;
+}
+
+如下图：
+
+
+
+Δ 给href中包含'qdzn/view'的所有链接设置样式
+
+兼容浏览器：IE6+、Firefox、Chrome、Safari、Opera
+
+8、[attribute^=value]
+
+含义：属性选择器：value的值等于开头字符
+
+例子：
+
+a[href^='http']
+{
+  background:#efefef;
+  padding-left: 10px;
+}
+
+如下图：
+
+
+
+Δ 给href中所有以http开头的链接设置样式
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+9、[attribute$=value]
+
+含义：属性选择器:value的值等于结尾字符
+
+例子：
+
+div[class$='test']
+{
+  background:#ffff00;
+}
+
+如下图：
+
+
+
+Δ 给class 属性值以 'test' 结尾的所有 div 元素设置样式
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+10、attribute~=value]
+
+含义：属性选择器：value的值等于包含字符
+
+例子：
+
+[title~=flower]
+{
+  background-color:yellow;
+}
+
+如下图：
+
+
+
+Δ 给titile 属性包含单词 ‘flower’ 的元素设置样式
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+16A:checked
+
+含义：checked伪类用来匹配处于选定状态的界面元素
+
+例子：
+
+input[type=radio]:checked
+{
+  border: 1px solid black;
+}
+
+Δ 给处于选定状态的单选radio设置样式
+
+兼容浏览器：Opera
+
+11、after和A:before
+
+含义：这两个伪类与content结合用于在元素的前面或者后面追加内容
+
+例子：
+
+h1:after
+{
+  content:url(../image/20161017/1.jpg);
+}
+
+如下图：
+
+
+
+Δ 在h1标题的后面显示一张图片
+
+我们也经常用它来实现清除浮动，写法如下
+
+.clearfix:after{
+  content:'';
+  display:block;
+  clear:both;
+  visibility: hidden;
+  font-size:0;
+  height:0;
+}
+  .clearfix {
+  *display:inline-block;
+  _height:1%;
+}
+
+兼容浏览器：IE7+、Firefox、Chrome、Safari、Opera
+
+12、not(selector)
+
+含义：匹配非指定元素/选择器的每个元素
+
+例子：
+
+:not(p)
+{
+  color: #ff0000;
+}
+
+如下图：
+
+
+
+Δ 给设置非p元素的所有元素设置样式
+
+兼容浏览器：IE9+、Firefox、Chrome、Safari、Opera
+28A:after和A:before
+
+含义：这两个伪类与content结合用于在元素的前面或者后面追加内容。
+例子：
+
+h1:after
+{
+  content:url(../image/20161017/1.jpg);
+}
+
+
+Δ 在h1标题的后面显示一张图片。
+
+我们也经常用它来实现清除浮动，写法如下
+
+.clearfix:after{
+  content:'';
+  display:block;
+  clear:both;
+  visibility: hidden;
+  font-size:0;
+  height:0;
+}
+  .clearfix {
+  *display:inline-block;
+  _height:1%;
+}
+13、first-letter
+
+含义：选取指定选择器的首字母。
+注释：以下属性可与 :first-letter 使用：
+字体属性
+颜色属性
+背景属性
+外边距属性
+内边距属性
+边框属性
+text-decoration
+vertical-align（只有在 float 为 'none' 时）
+text-transform
+line-height
+float
+clear
+例子：
+
+p:first-letter
+{
+  font-size:200%;
+color:#8A2BE2;
+}
+
+
+Δ 给每个 p 元素的首字母设置样式
+
+14、first-line
+
+含义：选取指定选择器的首行。
+注释：以下属性可与 :first-line 使用：
+字体属性
+颜色属性
+背景属性
+word-spacing
+letter-spacing
+text-decoration
+vertical-align
+text-transform
+line-height
+clear
+例子：
+
+p:first-line
+{
+  background-color:yellow;
+}
+
+
+Δ 给每个 p 元素的首行设置样式。
+
+15、not(selector)
+
+含义：否定伪类选择器：在匹配元素时排除某些元素。
+例子：
+
+:not(p)
+{
+  color: #ff0000;
+}
+
+
+Δ 给设置非p元素的所有元素设置样式。
+
+32::selection
+
+含义：被用户选取的部分。
+只能向 ::selection 选择器应用少量 CSS 属性：color、background、cursor 以及 outline
+例子：
+
+:not(p)
+{
+  color: #ff0000;
+}
+
+
+Δ 给被选中的文本设置样式。
+
+33:root
+
+含义：匹配文档根元素。
+在 HTML 中，根元素始终是 html 元素
+例子：
+
+:root
+{
+  background:#ff0000;
+}
+
+
+Δ 给HTML文档设置样式。
+
+34A:empty
+
+含义：匹配没有子元素（包括文本节点）的每个元素。
+
+例子：
+
+p:empty
+{
+background:#ff0000;
+}
+
+
+Δ 给空的 p 元素设置样式
+
+35A:target
+
+含义：用于选取当前活动的目标元素（URL 带有后面跟有锚名称 #，指向文档内某个具体的元素。这个被链接的元素就是目标元素(target element)）。
+例子：
+
+:target
+{
+  border: 2px solid #D4D4D4;
+  background-color: #e5eecc;
+}
+
+
+Δ 突出显示活动的 HTML 锚。
+
+36A:lang(language)
+
+含义：用于选取带有以指定值开头的 lang 属性的元素。
+注释：该值必须是整个单词，即可是单独的，比如 lang='en'，也可后跟连接符，比如 lang='en-us'。
+例子：
+
+p:lang(en)
+{
+  background:yellow;
+}
+
+
+Δ 给带有以'en'开头的 lang 属性值的每个
+元素设置样式。
 
